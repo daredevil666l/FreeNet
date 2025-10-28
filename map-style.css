@@ -1,0 +1,389 @@
+/* ===== Map Page Styles ===== */
+.map-page {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--background);
+}
+
+/* ===== App Header ===== */
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: var(--title-small);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    letter-spacing: -0.3px;
+}
+
+.logo-mini {
+    font-size: 24px;
+}
+
+.header-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.wifi-count {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    line-height: 1;
+}
+
+.wifi-label {
+    font-size: var(--body-small);
+    color: var(--text-secondary);
+}
+
+/* ===== Map Container ===== */
+.map-container {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== Leaflet Custom Styles ===== */
+.leaflet-popup-content-wrapper {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 0;
+    overflow: hidden;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    min-width: 200px;
+}
+
+.wifi-popup {
+    padding: var(--spacing-md);
+}
+
+.wifi-popup-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.wifi-popup-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.wifi-popup-title {
+    font-size: var(--body-large);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.wifi-popup-location {
+    font-size: var(--body-small);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.wifi-popup-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.popup-button {
+    flex: 1;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: var(--body-small);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.popup-button.primary {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.popup-button.secondary {
+    background: var(--background);
+    color: var(--primary-blue);
+}
+
+.popup-button:active {
+    transform: scale(0.95);
+}
+
+/* ===== Custom Marker Cluster Styles ===== */
+.wifi-marker-cluster {
+    background: rgba(0, 122, 255, 0.2);
+    border: 3px solid var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: var(--body-medium);
+}
+
+.wifi-marker-cluster:hover {
+    transform: scale(1.1);
+    transition: transform var(--transition-fast);
+}
+
+/* ===== Bottom Controls ===== */
+.bottom-controls {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    z-index: 1000;
+}
+
+.control-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    color: var(--text-primary);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-smooth);
+}
+
+.control-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.control-button:active {
+    transform: scale(0.95);
+}
+
+.control-button.primary {
+    background: var(--primary-blue);
+    color: white;
+    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.4);
+}
+
+.control-button.primary:hover {
+    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.5);
+}
+
+.control-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ===== Status Bar ===== */
+.status-bar {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: rgba(52, 199, 89, 0.95);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    z-index: 1001;
+    opacity: 0;
+    transition: all var(--transition-smooth);
+}
+
+.status-bar.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.status-bar.error {
+    background: rgba(255, 59, 48, 0.95);
+}
+
+.status-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.status-icon {
+    font-size: 16px;
+}
+
+.status-text {
+    font-size: var(--body-medium);
+    font-weight: 600;
+}
+
+/* ===== Loading Spinner ===== */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-smooth);
+}
+
+.loading-overlay.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== Custom Marker Icon ===== */
+.wifi-marker-icon {
+    background: var(--primary-blue);
+    width: 36px;
+    height: 36px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 122, 255, 0.4);
+    border: 3px solid white;
+}
+
+.wifi-marker-icon::before {
+    content: '📡';
+    transform: rotate(45deg);
+    font-size: 16px;
+}
+
+.wifi-marker-icon.active {
+    background: var(--success-green);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 3px 10px rgba(0, 122, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 3px 20px rgba(0, 122, 255, 0.8);
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .app-header {
+        height: 56px;
+    }
+    
+    .map-container {
+        top: 56px;
+    }
+    
+    .header-title {
+        font-size: 18px;
+    }
+    
+    .wifi-count {
+        font-size: 20px;
+    }
+    
+    .bottom-controls {
+        bottom: var(--spacing-lg);
+        right: var(--spacing-md);
+    }
+    
+    .control-button {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .control-button svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ===== Dark Mode ===== */
+@media (prefers-color-scheme: dark) {
+    .app-header {
+        background: rgba(28, 28, 30, 0.95);
+    }
+    
+    .control-button {
+        background: var(--surface);
+    }
+    
+    .leaflet-popup-content-wrapper {
+        background: var(--surface);
+        color: var(--text-primary);
+    }
+    
+    .popup-button.secondary {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}

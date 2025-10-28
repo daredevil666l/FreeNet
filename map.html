@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#007AFF">
+    <title>FreeNet - Карта WiFi точек</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="map-style.css">
+</head>
+<body class="map-page">
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <h1 class="header-title">
+                <span class="logo-mini">📡</span>
+                FreeNet
+            </h1>
+            <div class="header-stats">
+                <span class="wifi-count" id="wifiCount">0</span>
+                <span class="wifi-label">точек</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Map Container -->
+    <div id="map" class="map-container"></div>
+
+    <!-- Bottom Controls -->
+    <div class="bottom-controls">
+        <button class="control-button" id="centerButton" title="Моё местоположение">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 2V6M12 18V22M2 12H6M18 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+        
+        <button class="control-button" id="refreshButton" title="Обновить данные">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M4 4V10H10M20 20V14H14M18.36 6.64C17.6104 5.89042 16.718 5.29632 15.7372 4.89127C14.7564 4.48622 13.7058 4.27811 12.6453 4.27811C11.5848 4.27811 10.5342 4.48622 9.55338 4.89127C8.57258 5.29632 7.68016 5.89042 6.93 6.64L4 10M20 14L17.07 17.36C16.3198 18.1096 15.4274 18.7037 14.4466 19.1087C13.4658 19.5138 12.4152 19.7219 11.3547 19.7219C10.2942 19.7219 9.24362 19.5138 8.26282 19.1087C7.28202 18.7037 6.3896 18.1096 5.64 17.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <button class="control-button primary" id="nearestButton" title="Ближайшая точка">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="currentColor"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar" id="statusBar">
+        <div class="status-content">
+            <span class="status-icon">✓</span>
+            <span class="status-text">Данные загружены</span>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="map.js"></script>
+</body>
+</html>
