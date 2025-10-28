@@ -185,11 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('Device info:', device);
 
-    // Если приложение уже установлено, перенаправляем на главную страницу
+    // Если приложение запущено из standalone режима (с рабочего стола), сразу перенаправляем на карту
     if (device.isStandalone) {
-        console.log('App is already installed');
-        // Здесь позже добавим переход на страницу с картой
-        // window.location.href = 'map.html';
+        console.log('App launched from home screen, redirecting to map...');
+        window.location.href = 'map.html';
+        return; // Останавливаем дальнейшее выполнение
     }
 
     // Изменяем текст кнопки в зависимости от устройства
