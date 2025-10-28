@@ -1,0 +1,15 @@
+{
+  "name": "FreeNet",
+  "short_name": "FreeNet",
+  "description": "Офлайн‑карта Уфы с бесплатными точками интернета",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#0b0b0c",
+  "theme_color": "#0a84ff",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
